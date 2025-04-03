@@ -1,0 +1,3 @@
+SPOTIFY_CLIENT_ID=your_spotify_id
+SPOTIFY_CLIENT_SECRET=your_spotify_secret
+LASTFM_API_KEY=your_lastfm_api_key

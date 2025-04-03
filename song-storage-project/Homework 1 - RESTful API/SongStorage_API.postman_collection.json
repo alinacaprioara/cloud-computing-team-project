@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "b7d3d93b-b730-46cc-8726-9c4e9baa5b2a",
+		"name": "SongStorage_API",
+		"description": "A RESTfull API that manages a SongStorage, in which you can access songs, the users can have playlists and update them.\n\nGET:  \n`/songs`\n\n`/songs/{song_id}`\n\n`/users`\n\n`/users/{user_id}`\n\n`/users/{user_id}/playlists`\n\n`/users/{user_id}/playlists/{playlist_id}`\n\nPOST:\n\n`/songs`\n\n`/users`\n\n`/users/{user_id}/playlists`\n\nPUT:\n\n`/songs/{song_id}`\n\n`/users/{user_id}/playlists/{playlist_id}`\n\nDELETE:\n\n`/songs/{song_id}`\n\n`/users/{user_id}/playlists/{playlist_id}`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34950268"
+	},
+	"item": [
+		{
+			"name": "/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/songs",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{user_id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/65f3a4b9c9e34a7d6a1e9f7d",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"65f3a4b9c9e34a7d6a1e9f7d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs/{song_id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/songs/67cdfe382d3b27dbecbc0f1d",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"songs",
+						"67cdfe382d3b27dbecbc0f1d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{user_id}/playlists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/65f3a4b9c9e34a7d6a1e9f7d/playlists",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"65f3a4b9c9e34a7d6a1e9f7d",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{user_id}/playlists/{playlist_id}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/65f3b0d9c9e34a7d6a1e9f7e/playlists/605c72f65f3a4b9c9e34a7d9",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"65f3b0d9c9e34a7d6a1e9f7e",
+						"playlists",
+						"605c72f65f3a4b9c9e34a7d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Bohemian Rhapsody\",\r\n    \"artist\": \"Queen\",\r\n    \"album\": \"A Night at the Opera\",\r\n    \"year\": \"1975\",\r\n    \"genre\": \"Rock\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/songs",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{user_id}/playlists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"roadtrip music\",\r\n    \"songs\": [\r\n        {\r\n            \"_id\": \"677db0d90fceaa7951d4b9ae\",\r\n            \"title\": \"Born in Winter\",\r\n            \"artist\": \"Gojira\"\r\n        },\r\n        {\r\n            \"_id\": \"677db10f0fceaa7951d4b9b0\",\r\n            \"title\": \"Closer\",\r\n            \"artist\": \"Kings of Leon\"\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/65f3a4b9c9e34a7d6a1e9f7d/playlists",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"65f3a4b9c9e34a7d6a1e9f7d",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Paula\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs/{song_id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Bohemian Rhapsody (Remastered)\",\r\n    \"artist\": \"Queen\",\r\n    \"album\": \"Greatest Hits\",\r\n    \"year\": \"2021\",\r\n    \"genre\": \"Rock\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/songs/67ce21b2d5f051d1b8075c69",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"songs",
+						"67ce21b2d5f051d1b8075c69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{user_id}/playlists/{playlist_id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"updated\", \r\n    \"songs\": [\r\n        {\r\n            \"_id\": \"677db0d90fceaa7951d4b9ae\",\r\n            \"title\": \"Born in Winter\",\r\n            \"artist\": \"Gojira\"\r\n        },\r\n        {\r\n            \"_id\": \"677db10f0fceaa7951d4b9b0\",\r\n            \"title\": \"Closer\",\r\n            \"artist\": \"Kings of Leon\"\r\n        },\r\n        {\r\n            \"_id\": \"67cdfdf32d3b27dbecbc0f1c\",\r\n            \"title\": \"Bubbles\",\r\n            \"artist\": \"System of a Down\"\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/65f3a4b9c9e34a7d6a1e9f7d/playlists/67ce22c4d5f051d1b8075c6b",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"65f3a4b9c9e34a7d6a1e9f7d",
+						"playlists",
+						"67ce22c4d5f051d1b8075c6b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs/{song_id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/songs/67ce1061b842c0173248cfae",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"songs",
+						"67ce1061b842c0173248cfae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{user_id}/playlists/{playlist_id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users/65f3b0d9c9e34a7d6a1e9f7e/playlists/605c72f65f3a4b9c9e34a7d8",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"65f3b0d9c9e34a7d6a1e9f7e",
+						"playlists",
+						"605c72f65f3a4b9c9e34a7d8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
